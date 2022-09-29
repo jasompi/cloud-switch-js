@@ -1,3 +1,18 @@
-import { Num } from './Num'
+import { CloudSwitch, SwitchConfig } from './CloudSwitch'
+import {
+  ParticleCloud,
+  ParticleDevice,
+  ParticleError,
+  ParticlEvent,
+  ParticleEventStream,
+} from './ParticleCloud'
 
-export { Num }
+export {
+  CloudSwitch,
+  SwitchConfig,
+  ParticleCloud,
+  ParticleDevice,
+  ParticleError,
+  ParticlEvent,
+  ParticleEventStream,
+}

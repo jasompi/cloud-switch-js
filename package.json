@@ -1,7 +1,7 @@
 {
-  "name": "example-typescript-package",
-  "version": "0.2.2",
-  "description": "",
+  "name": "cloud-switch-js",
+  "version": "0.9.0",
+  "description": "Cloud Switch nodejs module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "umd:main": "dist/umd/index.js",
@@ -17,8 +17,9 @@
     "build:types": "node tools/cleanup types && tsc -p config/tsconfig.types.json",
     "clean": "node tools/cleanup",
     "package": "npm run build && npm pack",
-    "test": "jest --no-cache --runInBand",
-    "test:cov": "jest --coverage --no-cache --runInBand",
+    "test": "node test/login.js && jest --no-cache --runInBand --forceExit",
+    "test:watch": "node test/login.js && jest --no-cache --runInBand --forceExit --watch",
+    "test:cov": "node test/login.js && jest --coverage --no-cache --runInBand --forceExit",
     "addscope": "node tools/packagejson name @tomchen/example-typescript-package"
   },
   "publishConfig": {
@@ -28,32 +29,28 @@
     "dist"
   ],
   "keywords": [
-    "example",
-    "typescript",
-    "npm",
-    "package",
-    "sample",
-    "boilerplate",
-    "starter",
-    "demo",
-    "cjs",
-    "esm",
-    "umd"
+    "cloud switch",
+    "particle.io"
   ],
-  "author": "Tom Chen <tomchen.org@gmail.com>",
+  "author": "Jasom Pi <jasom.pi@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/tomchen/example-typescript-package",
+  "homepage": "https://github.com/jasompi/cloud-switch-js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tomchen/example-typescript-package.git"
+    "url": "git@github.com:jasompi/cloud-switch-js.git"
   },
   "bugs": {
-    "url": "https://github.com/tomchen/example-typescript-package/issues"
+    "url": "https://github.com/jasompi/cloud-switch-js/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "particle-api-js": "^9.4.1",
+    "url": "^0.11.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@particle/node-example-helper": "^0.0.2",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
